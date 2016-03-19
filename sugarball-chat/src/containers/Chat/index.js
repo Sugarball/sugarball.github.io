@@ -57,7 +57,8 @@ export class Chat extends Component {
     componentWillReceiveProps() {
     }
 
-    handleSubmit(){
+    handleSubmit = (event)=>{
+        event.preventDefault();
         if(!this.refs.input.getValue())return;
         console.log(this.refs.input.getValue());
         this.props.postMsg(this.refs.input.getValue());
@@ -88,12 +89,12 @@ export class Chat extends Component {
 
         return (
           <section className={styles}>
-              <List>
+              <List id="msgList" ref="msgList">
                   <Subheader>Chat</Subheader>
 
                   {
                       _msgList.map((msg,index)=>
-                          <section key = {index}>
+                          <section key = {index} ref="msgItem">
                           <ListItem
                               leftAvatar = {<Avatar src={require('./files/avatar.png')} />}
                               primaryText = {moment(msg.date).format('YYYY-MM-DD HH:mm:ss')}

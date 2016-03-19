@@ -3,6 +3,8 @@
 
   padding-bottom: $postHeight;
   .post{
+    z-index: 99;
+    background-color: white;
     height: $postHeight;
     position: fixed;
     width: 100%;
