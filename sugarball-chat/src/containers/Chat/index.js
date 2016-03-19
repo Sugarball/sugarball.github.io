@@ -51,7 +51,8 @@ export class Chat extends Component {
         this.props.getChats();
         this.setState({
             input : ""
-        })
+        });
+        this.refs.main.scrollTop = 100000;
     }
 
     componentWillReceiveProps() {
@@ -65,7 +66,8 @@ export class Chat extends Component {
         this.setState({
             input : ""
         });
-    }
+        this.refs.main.scrollTop = 100000;
+    };
 
     handleChange = (event)=>{
         this.setState({
@@ -88,8 +90,8 @@ export class Chat extends Component {
         }
 
         return (
-          <section className={styles}>
-              <List id="msgList" ref="msgList">
+          <section className={styles} ref="main">
+              <List className="msgList" ref="msgList">
                   <Subheader>Chat</Subheader>
 
                   {

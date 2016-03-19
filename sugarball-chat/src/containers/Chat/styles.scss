@@ -1,7 +1,10 @@
 :local(.styles) {
   $postHeight : 60px;
-
-  padding-bottom: $postHeight;
+  height: 100%;
+  overflow-y: scroll;
+  .msgList{
+    padding-bottom: $postHeight !important;
+  }
   .post{
     z-index: 99;
     background-color: white;
