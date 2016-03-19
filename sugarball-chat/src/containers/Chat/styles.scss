@@ -1,0 +1,27 @@
+:local(.styles) {
+  $postHeight : 60px;
+
+  padding-bottom: $postHeight;
+  .post{
+    height: $postHeight;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    //background-color: black;
+    padding: 0 20px 10px;
+  }
+  .input-sec{
+    width: 80% !important;
+    padding-right: 10px;
+    display: inline-block;
+    input{
+      line-height:40px !important;
+    }
+  }
+  .postBtn{
+    width: 20%;
+    display: inline-block;
+    min-width: 0 !important;
+    line-height: 48px !important;
+  }
+}
