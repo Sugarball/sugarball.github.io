@@ -52,7 +52,6 @@ export class Chat extends Component {
         this.setState({
             input : ""
         });
-        this.refs.main.scrollTop = 100000;
     }
 
     componentWillReceiveProps() {
@@ -61,12 +60,11 @@ export class Chat extends Component {
     handleSubmit = (event)=>{
         event.preventDefault();
         if(!this.refs.input.getValue())return;
-        console.log(this.refs.input.getValue());
         this.props.postMsg(this.refs.input.getValue());
+        this.refs.main.scrollTop = 10000;
         this.setState({
             input : ""
         });
-        this.refs.main.scrollTop = 100000;
     };
 
     handleChange = (event)=>{
@@ -78,19 +76,21 @@ export class Chat extends Component {
     render() {
         const { msgs } = this.props;
 
-        const inputStyles = {
-            underlineStyle: {
-                borderColor: Colors.orange500,
-            }
-        };
+
 
         let _msgList = [];
         for(let i in msgs){
             _msgList.push(msgs[i]);
         }
 
+        const inputStyles = {
+            underlineStyle: {
+                borderColor: Colors.orange500,
+            }
+        };
+
         return (
-          <section className={styles} ref="main">
+          <section className={styles} ref="main" id="main">
               <List className="msgList" ref="msgList">
                   <Subheader>Chat</Subheader>
 

@@ -15,7 +15,7 @@ export function getChats(){
         ref = new Wilddog("https://firstblood.wilddogio.com/");
         ref.on("value", function(snapshot) {
             console.log(snapshot.val());
-            dispatch(init(snapshot.val()))
+            dispatch(init(snapshot.val()));
         }, function (errorObject) {
             console.log("The read failed: " + errorObject.code);
         });
